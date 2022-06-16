@@ -55,15 +55,15 @@ const validateInputs = () => {
   }
 
     if(emailValue === '') {
-         if (!isValidEmail(emailValue)) {
-          
-          email.placeholder = "email@example/com";
-          
-        setError(email, 'Looks like this is not an email');
-         }
-    } else {
-        setSuccess(email);
-    }
+    setError(email, 'looks like this is not an email');
+    email.placeholder = 'email@example/com'
+} else if (!isValidEmail(emailValue)) {
+    setError(email, 'looks like this is not an email');
+    email.placeholder = 'email@example/com'
+    
+} else {
+    setSuccess(email);
+} 
 
     if(passwordValue === '') {
          if (passwordValue.length < 8 ) {
